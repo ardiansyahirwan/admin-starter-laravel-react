@@ -1,5 +1,6 @@
 import Dropdown from '@/Components/Dropdown';
 import { SideBarLink } from '@/Components/SideBarLink';
+import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 
 export default function DashboardLayout ( { children, user, header } )
@@ -21,10 +22,9 @@ export default function DashboardLayout ( { children, user, header } )
                         </svg>
                      </button>
 
-                     <a href="https://flowbite.com" className="flex ms-2 md:me-24">
-                        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" />
-                        <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">Flowbite</span>
-                     </a>
+                     <Link href={ route( 'dashboard' ) } className="flex ms-2 md:me-24">
+                        <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">adminKu</span>
+                     </Link>
                   </div>
 
                   <div className="flex items-center">
@@ -69,7 +69,7 @@ export default function DashboardLayout ( { children, user, header } )
             </div>
          </nav >
 
-         <aside className={ ( showNavigation ? 'translate-x-0 ' : '-translate-x-full ' ) + 'fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-white border-r border-gray-200 sm:translate-x-0' }>
+         <aside className={ ( showNavigation ? 'translate-x-0 ' : '-translate-x-full ' ) + 'fixed top-0 md:top-4 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-white border-r border-gray-200 sm:translate-x-0' }>
             <div className="h-full px-3 pb-4 overflow-y-auto bg-white">
                <ul className="space-y-2 font-medium">
                   <li>
@@ -119,7 +119,7 @@ export default function DashboardLayout ( { children, user, header } )
          </aside>
 
          <div className="p-5 md:my-6 sm:ml-64 relative top-16">
-            <div className="text-3xl text-gray-800 font-bold mb-3">
+            <div className="text-3xl text-gray-800 font-bold font-sans mb-3">
                { header }
             </div>
             <div className="p-4 md:px-6 lg:px-6 bg-white rounded-xl">
